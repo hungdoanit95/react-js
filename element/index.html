@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create Element (Compair JavaScript with React Js)</title>
+    </head>
+    <body>
+        <h1 class="text-center">Hello World</h1>
+        <div id="app"></div>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script>
+            // Tạo danh sách ul trong react  
+            /*
+                <div class="post-item">
+                    <h2 title="Học React tại F8">Học React Js</h2>
+                    <p>Học React Js từ cơ bản đến nâng cao</p>
+                </div>
+            */
+            
+            // ---- Javascript ----
+            // const post_item = document.createElement('div');
+            // post_item.className = "post-item";
+            // const h2_item = document.createElement('h2');
+            // h2_item.title = "Học React tại F8";
+            // h2_item.innerText = "Học React Js";
+            // const p_item = document.createElement('p');
+            // p_item.innerText = "Học React Js từ cơ bản đến nâng cao";
+            // post_item.appendChild(h2_item);
+            // post_item.appendChild(p_item);
+            // document.querySelector("#app").appendChild(post_item);
+
+            // --- React Js ---
+            const post_item = React.createElement(
+                'div',
+                {
+                    className: 'post-item'
+                },
+                React.createElement(
+                    'h2',
+                    {
+                        title: 'Học React tại F8'
+                    },
+                    'Học React Js'
+                ),
+                React.createElement('p',{},'Học React Js từ cơ bản đến nâng cao')
+            );
+
+            const root = document.getElementById("app");
+            ReactDOM.render(post_item, root);
+
+        </script>
+    </body>
+</html>
